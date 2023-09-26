@@ -1,0 +1,177 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Mooli', sans-serif;
+}
+
+body {
+    background-image:url(img/fondo\ nuevo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1800px 980px;
+    background-attachment: fixed;
+}
+
+.encabezado {
+    background-image: url(img/nav.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 30px;
+}
+
+.card {
+    width: 640px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-perspective: 1200px;
+    perspective: 1200px;
+    transition: 1s;
+}
+
+.card:hover {
+    transform: rotate(-5deg);
+}
+
+.card:hover .outside {
+    transform: rotateY(-140deg);
+}
+
+.outside,
+.inside {
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    left: 50.1%;
+}
+
+.inside {
+    background-image: url(img/foto6.png);
+    background-repeat: no-repeat;
+    background-size: 317px 400px;
+    padding: 0 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.inside p {
+    font-weight: 250;
+    margin-top: 220px;
+    color: white;
+    text-shadow:1px 1px 1px black,
+                1px 1px 1px black,
+                1px 1px 1px black,
+                1px 1px 1px black;
+}
+
+.outside {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    z-index: 1;
+    transform-origin: left;
+    transition: 1.5s;
+}
+
+.front,
+.back {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    left: 0.5%;
+}
+
+.front {
+    background-color:#8CA3C0;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background: linear-gradient(to left, #e0e0e0, #ffffff 30%);
+}
+
+.cake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.top-layer {
+    height: 300px;
+    width: 240px;
+    background-image: url(img/foto5.png);
+    background-repeat: no-repeat;
+    background-size: 250px 280px;
+}
+
+.outside p {
+    font-size: 23px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: white;
+    text-shadow:1px 1px 1px black,
+                1px 1px 1px black,
+                1px 1px 1px black,
+                1px 1px 1px black;
+}
+
+@media(max-width: 800px)
+{
+    body {
+        background-size: 650px 890px;
+    }
+    
+    .encabezado {
+        max-width: 900px;
+    }
+
+    .card {
+        max-width: 297px;
+    }
+    
+    .inside {
+        background-image: url(img/foto6.png);
+        background-size: 150px 400px;
+    }
+    
+    .front {
+        background-color: #8CA3C0;
+    }
+    
+    .top-layer {
+        background-image: url(img/foto5.png);
+        background-size: 150px 280px;
+    }
+    
+    .outside p {
+        font-size: 15px;
+        text-align: justify;
+        text-align: center;
+        letter-spacing: 1px;
+        color: white;
+    }
+
+    .inside p {
+        margin-bottom: 200px;
+        font-size: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+        color: white;
+    }
+}
